@@ -1,5 +1,18 @@
+
 import pygame
+from pygame.locals import *
+
+from classes.classAcoes import Acoes
+from classes.classConfigTela import ConfigTela
+
+gameLoop = True
 
 if __name__ == '__main__':
-    print('Adicionado pycharm')
+    configTela = ConfigTela()
+    acoesJogo = Acoes()
+    while gameLoop:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                acoesJogo.fecharJogo()
+        pygame.display.update()
 
