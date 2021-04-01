@@ -5,12 +5,11 @@ from pygame.locals import *
 from classes.classAcoes import Acoes
 from classes.classConfigTela import ConfigTela
 
-gameLoop = True
 
 if __name__ == '__main__':
     configTela = ConfigTela()
     acoesJogo = Acoes()
-    while gameLoop:
+    while True:
         for event in pygame.event.get():
             if event.type == QUIT:
                 acoesJogo.fecharJogo()
