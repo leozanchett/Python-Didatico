@@ -1,4 +1,6 @@
 from classes.classPessoa import Pessoa
+from classes.classProduto import Produto
+
 
 def exemploPessoa():
     p2 = Pessoa('Creide', 32)
@@ -19,6 +21,15 @@ def exemploPessoa():
     print(f'{p3.nome} tem {p3.idade} anos')
     print(f'Número do id: {Pessoa.gera_id()} ')
 
+def exemploProdutos():
+    prod = Produto('leITE', 10)
+    prod.desconto(50)
+    print(f'Nome: {prod.nome} | Valor: R$ {prod.preco}')
+    prod2 = Produto('CaNECA', 'R$100asdsa')
+    prod2.desconto(50)
+    print(f'Nome: {prod2.nome} | Valor: R$ {prod2.preco}')
+
 if __name__ == '__main__':
-    exemploPessoa()
+    # exemploPessoa()
+    exemploProdutos()
 
