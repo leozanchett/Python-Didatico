@@ -1,4 +1,5 @@
 from datetime import datetime
+from random import randint
 
 class Pessoa:
     ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
@@ -45,3 +46,12 @@ class Pessoa:
 
     def get_ano_nasciment(self):
         return self.ano_atual - self.idade
+
+    @classmethod # nesse caso utilizado semelhante à um factory.
+    def por_ano_nascimento(cls, _anome, _aanonascimento):
+        idade = cls.ano_atual - _aanonascimento
+        return cls(_anome, idade)
+
+    @staticmethod #não precisa dá classe instanciada porém não consegue acessar as propriedades da mesma.
+    def gera_id():
+        return randint(0, 100)

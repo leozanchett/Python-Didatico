@@ -15,6 +15,9 @@ def exemploPessoa():
     print(f'{p1.ano_atual} é o ano atual')
     print(f'{p1.nome} nasceu em {p1.get_ano_nasciment()}')
     print(f'{p2.nome} nasceu em {p2.get_ano_nasciment()}')
+    p3 = Pessoa.por_ano_nascimento('Maria', 1992)
+    print(f'{p3.nome} tem {p3.idade} anos')
+    print(f'Número do id: {Pessoa.gera_id()} ')
 
 if __name__ == '__main__':
     exemploPessoa()
