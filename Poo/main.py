@@ -1,5 +1,6 @@
 from classes.classPessoa import Pessoa
 from classes.classProduto import Produto
+from classes.classVariaveisDeClasse import A
 
 
 def exemploPessoa():
@@ -29,7 +30,18 @@ def exemploProdutos():
     prod2.desconto(50)
     print(f'Nome: {prod2.nome} | Valor: R$ {prod2.preco}')
 
+def exemploVariaveisDeClasse():
+    a1 = A()
+    a2 = A()
+    # A.vc = 321 # muda o valor da váriavel de classe para todos os objetos
+    a2.vc = 321
+    print(a1.vc)
+    print(a2.vc)
+    print(a2.__dict__)
+    print(A.vc)
+
 if __name__ == '__main__':
     # exemploPessoa()
-    exemploProdutos()
+    # exemploProdutos()
+    exemploVariaveisDeClasse()
 
