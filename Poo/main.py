@@ -1,6 +1,7 @@
 from classes.classPessoa import Pessoa
 from classes.classProduto import Produto
 from classes.classVariaveisDeClasse import A
+from classes.classEncapsulamento import BaseDeDados
 
 
 def exemploPessoa():
@@ -40,8 +41,26 @@ def exemploVariaveisDeClasse():
     print(a2.__dict__)
     print(A.vc)
 
+def encapsulamento():
+    bd = BaseDeDados()
+    bd.inserir_cliente(1, 'Leo')
+    bd.inserir_cliente(2, 'Rose')
+    bd.inserir_cliente(3, 'Miranda')
+    bd.lista_clientes()
+    print('=' * 40)
+    bd.apaga_cliente(2)
+    bd.lista_clientes()
+    # quando há dois underlines é criado uma nova variável de classe
+    bd.__dados = 'Outra coisa'
+    print(bd.__dados)
+    # para acessar a variável real da classe, é necessário declarar desta maneira:
+    print(bd._BaseDeDados__dados)
+
 if __name__ == '__main__':
     # exemploPessoa()
     # exemploProdutos()
-    exemploVariaveisDeClasse()
+    # exemploVariaveisDeClasse()
+    # exemploEncapsulamento
+    encapsulamento()
+
 
