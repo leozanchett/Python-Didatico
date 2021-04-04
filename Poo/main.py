@@ -126,6 +126,6 @@ if __name__ == '__main__':
     # Composição = É DONO
     # exemploComposicao()
     # Herança = É
-    exemploHeranca()
+    # exemploHeranca()
 
 
