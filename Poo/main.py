@@ -1,3 +1,4 @@
+from classes.classesAssociacao import Escritor, Caneta, MaqEscrever
 from classes.classPessoa import Pessoa
 from classes.classProduto import Produto
 from classes.classVariaveisDeClasse import A
@@ -56,11 +57,28 @@ def encapsulamento():
     # para acessar a variável real da classe, é necessário declarar desta maneira:
     print(bd._BaseDeDados__dados)
 
+def exemploAssociacao():
+    escrit = Escritor('Joaozin')
+    caneta = Caneta('bic')
+    maq = MaqEscrever()
+    print(escrit.nome)
+    print(caneta.marca)
+    caneta.escrever()
+    maq.escrever()
+
+    escrit.ferramenta = caneta
+    escrit.ferramenta.escrever()
+    del escrit
+    #print(escrit)  # aqui gera exceção pois o objeto escrit não existe mais na memória
+    print(caneta.marca) # o porém de fazer esse tipo de associação é que o objeto caneta ainda fica existindo na memória.
+
 if __name__ == '__main__':
+    # ver sobre packages
     # exemploPessoa()
     # exemploProdutos()
     # exemploVariaveisDeClasse()
     # exemploEncapsulamento
-    encapsulamento()
+    # encapsulamento()
+    exemploAssociacao()
 
 
