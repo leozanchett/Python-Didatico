@@ -1,3 +1,4 @@
+from classes.classComposicao import Cliente, Endereco
 from classes.classesAssociacao import Escritor, Caneta, MaqEscrever
 from classes.classPessoa import Pessoa
 from classes.classProduto import Produto
@@ -80,6 +81,24 @@ def exemploAgregacao():
     carrinho.inserir_produto(Produto('Miojo', 2.99))
     carrinho.lista_produto()
     carrinho.soma_total()
+    del carrinho
+    print('#' * 30)
+
+def exemploComposicao():
+    print('=' * 30)
+    cli = Cliente('Luiz', 32)
+    cli.lista_info_cliente()
+    cli.insere_endereco(Endereco('Joaçaba', 'SC'))
+    cli.lista_enderecos()
+    del cli
+    print('=' * 30)
+    cli2 = Cliente('Marinalva', 58)
+    cli2.lista_info_cliente()
+    cli2.insere_endereco(Endereco('Luzerna', 'SC'))
+    cli2.insere_endereco(Endereco('Erval Velho', 'SC'))
+    cli2.lista_enderecos()
+    print('\n')
+    print('#' * 30)
 
 if __name__ == '__main__':
     # ver sobre packages
@@ -88,7 +107,12 @@ if __name__ == '__main__':
     # exemploVariaveisDeClasse()
     # exemploEncapsulamento
     # encapsulamento()
+    # Associação =  USA
     # exemploAssociacao()
-    exemploAgregacao()
+    # Agregação = TEM
+    # exemploAgregacao()
+    # Composição = É DONO
+     exemploComposicao()
+    # Herança = É
 
 

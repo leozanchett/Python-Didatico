@@ -15,9 +15,14 @@ class CarinhoCompras:
             total += produto.valor
         print(total)
 
+    def __del__(self):
+        print('Carinho foi apagado')
+
 
 class Produto:
     def __init__(self, _anome, _avalor):
         self.nome = _anome
         self.valor = _avalor
 
+    def __del__(self):
+        print('Produto foi apagado')
