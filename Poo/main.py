@@ -5,6 +5,7 @@ from classes.classProduto import Produto
 from classes.classVariaveisDeClasse import A
 from classes.classEncapsulamento import BaseDeDados
 from classes.classesAgregacao import *
+from classes.classHeranca import HCliente, HAluno, HPessoa
 
 
 def exemploPessoa():
@@ -100,6 +101,17 @@ def exemploComposicao():
     print('\n')
     print('#' * 30)
 
+def exemploHeranca():
+    c1 = HCliente('Nome', 45)
+    aluno = HAluno('Joazin', 14)
+    c1.falar()
+    aluno.falar()
+    c1.comprar()
+    aluno.estudar()
+    print('#' * 40)
+    a = HPessoa('teste', 33)
+    a.falar()
+
 if __name__ == '__main__':
     # ver sobre packages
     # exemploPessoa()
@@ -112,7 +124,8 @@ if __name__ == '__main__':
     # Agregação = TEM
     # exemploAgregacao()
     # Composição = É DONO
-     exemploComposicao()
+    # exemploComposicao()
     # Herança = É
+    exemploHeranca()
 
 
