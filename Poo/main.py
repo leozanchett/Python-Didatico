@@ -3,6 +3,7 @@ from classes.classPessoa import Pessoa
 from classes.classProduto import Produto
 from classes.classVariaveisDeClasse import A
 from classes.classEncapsulamento import BaseDeDados
+from classes.classesAgregacao import *
 
 
 def exemploPessoa():
@@ -72,6 +73,14 @@ def exemploAssociacao():
     #print(escrit)  # aqui gera exceção pois o objeto escrit não existe mais na memória
     print(caneta.marca) # o porém de fazer esse tipo de associação é que o objeto caneta ainda fica existindo na memória.
 
+def exemploAgregacao():
+    carrinho = CarinhoCompras()
+    carrinho.inserir_produto(Produto('Leite', 10.50))
+    carrinho.inserir_produto(Produto('Sabonete', 5.45))
+    carrinho.inserir_produto(Produto('Miojo', 2.99))
+    carrinho.lista_produto()
+    carrinho.soma_total()
+
 if __name__ == '__main__':
     # ver sobre packages
     # exemploPessoa()
@@ -79,6 +88,7 @@ if __name__ == '__main__':
     # exemploVariaveisDeClasse()
     # exemploEncapsulamento
     # encapsulamento()
-    exemploAssociacao()
+    # exemploAssociacao()
+    exemploAgregacao()
 
 
