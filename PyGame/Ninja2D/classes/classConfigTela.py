@@ -1,5 +1,5 @@
 import pygame
-from uteis.style import WHITE
+from uteis.style import AZUL_CLARO
 
 class ConfigTela:
     def __init__(self):
@@ -8,5 +8,5 @@ class ConfigTela:
         self.heigth = 480
         self.tela = pygame.display.set_mode([self.width, self.heigth])
         pygame.display.set_caption('Ninja 2D')
-        self.tela.fill(WHITE)
+        self.tela.fill(AZUL_CLARO)
         self.keys = None
