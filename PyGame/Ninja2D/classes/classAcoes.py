@@ -8,10 +8,11 @@ from uteis.style import WHITE
 from pygame.locals import *
 
 
-class Acoes(ConfigTela):
+class Acoes():
 
-    def __init__(self, _aPersonagem):
-        self.player = _aPersonagem
+    def __init__(self, _aPersonagem, _aTela):
+        self.personagem = _aPersonagem
+        self.tela = _aTela
 
     def eventtype(self, _aevento):
         if _aevento.type == QUIT:
@@ -22,37 +23,30 @@ class Acoes(ConfigTela):
             self.keyup()
 
     def desenharRostoPersonagem(self):
-        self.player.personagem.image = pygame.image.load( self.player.imagemRosto())
+        self.personagem.sprite.image = pygame.image.load(self.personagem.imagemRosto())
         #redimensiona a imagem.
-        self.player.personagem.image = pygame.transform.scale(self.player.personagem.image, [100, 100])
-        self.player.personagem.rect = pygame.Rect(50, 50, 100, 100)
-        self.player.drawGroup.draw(self.tela)
-
-    def desenharRetangulo(self):
-        retangulo = pygame.Rect(0, 0, 200, 100)  # left / top / width / heigth
-        retangulo.center = [self.tela.get_width() / 2, self.tela.get_height() / 2]
-        pygame.draw.rect(self.tela, [255, 255, 255, 255], retangulo)
-
-    def aplicarCorDefault(self):
-        self.tela.fill(WHITE)
-
-    def diminuirTela(self):
-        self.DISPLAY = pygame.display.set_mode([300, 400])
-        self.aplicarCorDefault()
+        self.personagem.sprite.image = pygame.transform.scale(self.personagem.sprite.image, [100, 100])
+        self.personagem.sprite.rect = pygame.Rect(50, 50, 100, 100)
+        self.personagem.drawGroup.draw(self.tela.display)
 
     def keydown(self, _aKey):
         if _aKey == pygame.K_ESCAPE:
-            Acoes().fecharJogo()
+            self.fecharJogo()
         elif _aKey == pygame.K_w:
             print('pressiona W')
-        elif _aKey == pygame.K_q:
-            self.desenharRostoPersonagem()
-            #self.desenharRetangulo()
 
     def escutaKeyPressed(self, _akey):
-        self.keys = _akey
-        if self.keys[pygame.K_w]:
-            print('Segurando W')
+        if _akey[pygame.K_d]:
+            self.personagem.sprite.rect.x += 1
+        if _akey[pygame.K_a]:
+            self.personagem.sprite.rect.x -= 1
+        if _akey[pygame.K_s]:
+            self.personagem.sprite.rect.y += 1
+        if _akey[pygame.K_w]:
+            self.personagem.sprite.rect.y -= 1
+        self.tela.corTelaDefault()
+        self.personagem.drawGroup.draw(self.tela.display)
+
 
     @staticmethod
     def fecharJogo():

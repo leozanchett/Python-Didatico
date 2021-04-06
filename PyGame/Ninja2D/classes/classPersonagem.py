@@ -5,7 +5,7 @@ from pathlib import Path
 class Personagem():
     def __init__(self):
         self.drawGroup = pygame.sprite.Group()
-        self.personagem = pygame.sprite.Sprite(self.drawGroup)
+        self.sprite = pygame.sprite.Sprite(self.drawGroup)
 
     @staticmethod
     def imagemRosto():
