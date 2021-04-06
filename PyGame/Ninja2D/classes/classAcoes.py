@@ -18,13 +18,6 @@ class Acoes():
         elif _aevento.type == KEYUP:
             self.keyup()
 
-    def desenharRostoPersonagem(self):
-        self.personagem.sprite.image = pygame.image.load(self.personagem.imagemRosto())
-        #redimensiona a imagem.
-        self.personagem.sprite.image = pygame.transform.scale(self.personagem.sprite.image, [100, 100])
-        self.personagem.sprite.rect = pygame.Rect(50, 50, 100, 100)
-        self.personagem.drawGroup.draw(self.tela.display)
-
     def keydown(self, _aKey):
         if _aKey == pygame.K_ESCAPE:
             self.fecharJogo()

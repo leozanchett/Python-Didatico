@@ -9,8 +9,8 @@ if __name__ == '__main__':
     tela = ConfigTela()
     som = Som()
     personagem = Personagem(som)
+    personagem.desenharRostoPersonagem(tela)
     controleAcoes = Acoes(personagem, tela)
-    controleAcoes.desenharRostoPersonagem()
     while True:
         for event in pygame.event.get():
             controleAcoes.eventtype(event)
