@@ -3,12 +3,13 @@ from pathlib import Path
 
 
 class Personagem():
-    def __init__(self):
+    diretorio = 'images'
+
+    def __init__(self, _asom):
         self.drawGroup = pygame.sprite.Group()
         self.sprite = pygame.sprite.Sprite(self.drawGroup)
+        self.som = _asom
 
-    @staticmethod
-    def imagemRosto():
-        path = Path().cwd().as_posix()
-        path = path + '/images/rosto.png'
-        return path
+    @classmethod
+    def imagemRosto(cls):
+        return Path().cwd().as_posix() + '/'+cls.diretorio+'/rosto.png'

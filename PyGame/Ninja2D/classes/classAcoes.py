@@ -1,10 +1,6 @@
 import sys
 
 import pygame
-
-from classes.classConfigTela import ConfigTela
-from classes.classPersonagem import Personagem
-from uteis.style import WHITE
 from pygame.locals import *
 
 
@@ -32,8 +28,8 @@ class Acoes():
     def keydown(self, _aKey):
         if _aKey == pygame.K_ESCAPE:
             self.fecharJogo()
-        elif _aKey == pygame.K_w:
-            print('pressiona W')
+        if _aKey == pygame.K_SPACE:
+            self.personagem.som.somAtaque()
 
     def escutaKeyPressed(self, _akey):
         if _akey[pygame.K_d]:
