@@ -7,6 +7,7 @@ class ConfigTela:
         self.display = pygame.display.set_mode([840, 480])
         pygame.display.set_caption('Ninja 2D')
         self.display.fill(AZUL_CLARO)
+        self.clock = pygame.time.Clock()
 
     def corTelaDefault(self):
         self.display.fill(AZUL_CLARO)
