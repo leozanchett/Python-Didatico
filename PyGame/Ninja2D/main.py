@@ -2,14 +2,14 @@ import pygame
 
 from classes.classConfigTela import ConfigTela
 from classes.classEfeitosSonoros import Som
-from classes.classPersonagemPrincipal import PersonagemPrincipal
+from classes.classNave import NavePrincipal
 from pygame.locals import *
 
 if __name__ == '__main__':
     tela = ConfigTela()
     som = Som()
     objectGroup = pygame.sprite.Group()
-    personagem = PersonagemPrincipal(objectGroup)
+    personagem = NavePrincipal(objectGroup)
     # personagem2 = PersonagemPrincipal(objectGroup)
     # personagem2.rect = pygame.Rect(50, 250, 100, 100)
     while True:

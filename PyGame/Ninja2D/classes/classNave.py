@@ -2,13 +2,13 @@ import pygame
 from pathlib import Path
 
 
-class PersonagemPrincipal(pygame.sprite.Sprite):
+class NavePrincipal(pygame.sprite.Sprite):
     diretorioImg = 'images'
     diretorioSom = 'sounds'
 
     def __init__(self, *groups):
         super().__init__(*groups)
-        self.image = pygame.image.load(self.imagemRosto())
+        self.image = pygame.image.load(self.nave())
         # redimensiona a imagem.
         self.image = pygame.transform.scale(self.image, [100, 100])
         self.rect = pygame.Rect(50, 50, 100, 100)
@@ -28,7 +28,7 @@ class PersonagemPrincipal(pygame.sprite.Sprite):
             self.somAtaque()
 
     def somAtaque(self):
-        self.ataqueSom.set_volume(0.02)
+        self.ataqueSom.set_volume(0.09)
         self.ataqueSom.play()
 
     @classmethod
@@ -36,5 +36,5 @@ class PersonagemPrincipal(pygame.sprite.Sprite):
         return Path().cwd().as_posix() + '/'+cls.diretorioSom+'/silencer.wav'
 
     @classmethod
-    def imagemRosto(cls):
-        return Path().cwd().as_posix() + '/'+cls.diretorioImg+'/rosto.png'
+    def nave(cls):
+        return Path().cwd().as_posix() + '/'+cls.diretorioImg+'/naveprincipal.png'
